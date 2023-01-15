@@ -11,13 +11,23 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Category.hasMany(models.Article, {
+				foreignKey: "category_id",
+				as: "category",
+			});
     }
   }
-  Category.init({
-    name: DataTypes.STRING
-  }, {
-    sequelize,
-    modelName: 'Category',
-  });
+  Category.init(
+		{
+			name: {
+				type: DataTypes.STRING,
+				unique: { msg: "Name already exist!" },
+			},
+		},
+		{
+			sequelize,
+			modelName: "Category",
+		},
+	);
   return Category;
 };
