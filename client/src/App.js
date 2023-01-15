@@ -32,7 +32,7 @@ function App() {
 						path="/dashboard/categories/update/:id"
 						element={<UpdateCategory />}
 					/>
-					{/* <Route path="*" element={<PageNotFound />}></Route> */}
+					<Route path="*" element={<PageNotFound />}></Route>
 				</Routes>
 			</div>
 		</>
