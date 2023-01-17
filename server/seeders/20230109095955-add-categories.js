@@ -37,11 +37,6 @@ module.exports = {
 					updatedAt: new Date(),
 				},
 				{
-					name: "Voli",
-					createdAt: new Date(),
-					updatedAt: new Date(),
-				},
-				{
 					name: "Basket",
 					createdAt: new Date(),
 					updatedAt: new Date(),

@@ -85,7 +85,7 @@ const Add = () => {
 
 							<Row className="mb-3">
 								<Form.Group as={Col} controlId="formGridState">
-									<Form.Label>State</Form.Label>
+									<Form.Label>Category</Form.Label>
 									<Form.Select
 										size="sm"
 										onChange={(e) => {

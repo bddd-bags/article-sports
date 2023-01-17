@@ -89,7 +89,7 @@ function Update() {
 
 							<Row className="mb-3">
 								<Form.Group as={Col} controlId="formGridState">
-									<Form.Label>State</Form.Label>
+									<Form.Label>Category</Form.Label>
 									<Form.Select
 										size="sm"
 										onChange={(e) => {
@@ -119,7 +119,7 @@ function Update() {
 									</Form.Select>
 								</Form.Group>
 								<Form.Group controlId="formFileSm" as={Col} className="mb-3">
-									<Form.Label size="sm">Small file input example</Form.Label>
+									<Form.Label size="sm">Image</Form.Label>
 									<Form.Control
 										onChange={(e) => setImg(e.target.files[0])}
 										type="file"

@@ -4,7 +4,14 @@ import Navbar from "../../../components/Navbar";
 import { Link } from "react-router-dom";
 import Footer from "../../../components/Footer";
 import Message from "../../../components/Message";
-import { Card, Button, Badge, Form } from "react-bootstrap";
+import {
+	Card,
+	Button,
+	Badge,
+	Form,
+	Dropdown,
+	DropdownButton,
+} from "react-bootstrap";
 import styles from "./Index.module.css";
 
 function Article() {
@@ -141,27 +148,50 @@ const Data = ({ data, BASE_URL, cbDelete }) => {
 							<Card.Body className="w-100 row align-items-between">
 								<div>
 									<small className="text-muted">Last updated at {update}</small>
-									<Card.Title>{e.title}</Card.Title>
+									<Card.Title>
+										{e.title.length > 88
+											? e.title.substr(0, 88) + "...."
+											: e.title}
+									</Card.Title>
 								</div>
 								<Card.Text>
 									{e.description.length > 120
 										? e.description.substr(0, 120) + "...."
 										: e.description}
 								</Card.Text>
-								<div className="d-flex align-items-center">
+								<DropdownButton
+									variant="outline-primary"
+									title="Action"
+									id="input-group-dropdown-1"
+									size="sm"
+								>
+									<Link
+										to={`/dashboard/articles/update/${e.slug}`}
+										className={`${styles.dropdownItem}`}
+									>
+										Edit
+									</Link>
+									<Dropdown.Divider />
+									<Dropdown.Item onClick={() => cbDelete(e.id)}>
+										Delete
+									</Dropdown.Item>
+								</DropdownButton>
+								{/* <div className="d-flex align-items-center">
 									<Link to={`/dashboard/articles/update/${e.slug}`}>
 										<Badge bg="warning" className="p-2 me-2">
 											Edit
 										</Badge>
 									</Link>
-									<Badge
-										bg="danger"
-										onClick={() => cbDelete(e.id)}
-										className="p-2 me-2"
-									>
-										Delete
-									</Badge>
-								</div>
+									<Link>
+										<Badge
+											bg="danger"
+											onClick={() => cbDelete(e.id)}
+											className="p-2 me-2"
+										>
+											Delete
+										</Badge>
+									</Link>
+								</div> */}
 							</Card.Body>
 						</Card>
 					</div>
