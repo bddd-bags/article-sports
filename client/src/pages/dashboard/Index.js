@@ -28,9 +28,11 @@ function Dashboard() {
 					>
 						<div className="col-md-6 mb-4">
 							<div className={`${styles.dashboardCard}`}>
-								<div className="d-flex justify-content-around align-items-center">
-									<BsFillBookmarkCheckFill size={100} color={"#27d956"} />
-									<div>
+								<div className="d-flex justify-content-around align-items-center flex-wrap flex-md-nowrap">
+									<div className="w-100 d-flex align-items-center justify-content-center">
+										<BsFillBookmarkCheckFill size={100} color={"#27d956"} />
+									</div>
+									<div className="w-100 mt-3 text-center text-md-start">
 										<h3 className="fw-bold">Article</h3>
 										<p>Articles that you have uploaded</p>
 										<h1 className="text-center">{article.length}</h1>
@@ -40,9 +42,11 @@ function Dashboard() {
 						</div>
 						<div className="col-md-6 mb-4">
 							<div className={`${styles.dashboardCard}`}>
-								<div className="d-flex justify-content-around align-items-center">
-									<BsUiRadios size={100} />
-									<div>
+								<div className="d-flex justify-content-around align-items-center flex-wrap flex-md-nowrap">
+									<div className="w-100 d-flex align-items-center justify-content-center">
+										<BsUiRadios size={100} />
+									</div>
+									<div className="w-100 mt-3 text-center text-md-start">
 										<h3 className="fw-bold">Categories</h3>
 										<p>Number of categories</p>
 										<h1 className="text-center">{category.length}</h1>

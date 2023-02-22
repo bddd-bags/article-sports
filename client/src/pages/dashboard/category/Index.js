@@ -48,7 +48,7 @@ const Category = () => {
 								</div>
 							</Card.Header>
 							<Card.Body>
-								<Table striped bordered hover>
+								<Table striped bordered hover responsive>
 									<thead>
 										<tr>
 											<th style={{ width: "10%", textAlign: "center" }}>No</th>

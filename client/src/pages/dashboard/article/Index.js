@@ -4,14 +4,7 @@ import Navbar from "../../../components/Navbar";
 import { Link } from "react-router-dom";
 import Footer from "../../../components/Footer";
 import Message from "../../../components/Message";
-import {
-	Card,
-	Button,
-	Badge,
-	Form,
-	Dropdown,
-	DropdownButton,
-} from "react-bootstrap";
+import { Card, Button, Form, Dropdown, DropdownButton } from "react-bootstrap";
 import styles from "./Index.module.css";
 
 function Article() {
@@ -61,7 +54,14 @@ function Article() {
 				>
 					<div className="row">
 						<div className="col-12">
-							<h1>Articles</h1>
+							<div className="d-flex justify-content-between justify-content-sm-start ">
+								<h1>Articles</h1>
+								<Link className="d-sm-none" to={"/dashboard/articles/add"}>
+									<Button size="sm" className={styles.newColorBtn}>
+										Add
+									</Button>
+								</Link>
+							</div>
 							<p>List of Articles</p>
 						</div>
 						<div className="col-12">
@@ -84,7 +84,10 @@ function Article() {
 										Search
 									</Button>
 								</div>
-								<Link to={"/dashboard/articles/add"}>
+								<Link
+									className="d-none d-sm-block"
+									to={"/dashboard/articles/add"}
+								>
 									<Button size="sm" className={styles.newColorBtn}>
 										Add
 									</Button>
@@ -128,7 +131,7 @@ const Data = ({ data, BASE_URL, cbDelete }) => {
 	return (
 		<>
 			{data?.map((e) => {
-				const update = e.updatedAt.split("").splice(0, 9).join("");
+				const update = e.updatedAt.split("").splice(0, 10).join("");
 				console.log(update);
 				return (
 					<div key={e.id} className={`col-md-12 mb-4 px-0`}>
@@ -149,49 +152,56 @@ const Data = ({ data, BASE_URL, cbDelete }) => {
 								<div>
 									<small className="text-muted">Last updated at {update}</small>
 									<Card.Title>
-										{e.title.length > 88
-											? e.title.substr(0, 88) + "...."
-											: e.title}
+										<div className="d-block d-sm-none">
+											{e.title.length > 30
+												? e.title.substr(0, 30) + "...."
+												: e.title}
+										</div>
+										<div className="d-none d-sm-block">
+											{e.title.length > 88
+												? e.title.substr(0, 88) + "...."
+												: e.title}
+										</div>
 									</Card.Title>
 								</div>
-								<Card.Text>
-									{e.description.length > 120
-										? e.description.substr(0, 120) + "...."
-										: e.description}
+								<Card.Text className={styles.textJustify}>
+									<div className="d-block d-sm-none">
+										{e.description.length > 65
+											? e.description.substr(0, 65) + "...."
+											: e.description}
+									</div>
+									<div className="d-none d-sm-block">
+										{e.description.length > 120
+											? e.description.substr(0, 120) + "...."
+											: e.description}
+									</div>
 								</Card.Text>
-								<DropdownButton
-									variant="outline-primary"
-									title="Action"
-									id="input-group-dropdown-1"
-									size="sm"
-								>
-									<Link
-										to={`/dashboard/articles/update/${e.slug}`}
-										className={`${styles.dropdownItem}`}
+								<div className="d-flex align-items-end">
+									<DropdownButton
+										variant="outline-primary"
+										title="Action"
+										id="input-group-dropdown-1"
+										size="sm"
 									>
-										Edit
-									</Link>
-									<Dropdown.Divider />
-									<Dropdown.Item onClick={() => cbDelete(e.id)}>
-										Delete
-									</Dropdown.Item>
-								</DropdownButton>
-								{/* <div className="d-flex align-items-center">
-									<Link to={`/dashboard/articles/update/${e.slug}`}>
-										<Badge bg="warning" className="p-2 me-2">
-											Edit
-										</Badge>
-									</Link>
-									<Link>
-										<Badge
-											bg="danger"
-											onClick={() => cbDelete(e.id)}
-											className="p-2 me-2"
+										<Link
+											to={`/dashboard/articles/${e.slug}`}
+											className={`${styles.dropdownItem}`}
 										>
+											Detail
+										</Link>
+										<Dropdown.Divider />
+										<Link
+											to={`/dashboard/articles/update/${e.slug}`}
+											className={`${styles.dropdownItem}`}
+										>
+											Edit
+										</Link>
+										<Dropdown.Divider />
+										<Dropdown.Item onClick={() => cbDelete(e.id)}>
 											Delete
-										</Badge>
-									</Link>
-								</div> */}
+										</Dropdown.Item>
+									</DropdownButton>
+								</div>
 							</Card.Body>
 						</Card>
 					</div>

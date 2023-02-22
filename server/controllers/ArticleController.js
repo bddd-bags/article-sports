@@ -1,4 +1,4 @@
-const { Article, Category } = require("../models");
+const { Article, Category, User } = require("../models");
 const { Op, fn, where: $where } = require("sequelize");
 const slugify = require("slug-generator");
 const fs = require("fs");
@@ -136,6 +136,16 @@ class ArticleController {
 			const { slug } = req.params;
 			const article = await Article.findOne({
 				where: { slug },
+				include: [
+					{
+						model: User,
+						as: "user",
+					},
+					{
+						model: Category,
+						as: "category",
+					},
+				],
 			});
 
 			if (!article) throw new Error("Article not found!");

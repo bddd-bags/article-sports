@@ -10,6 +10,7 @@ import Category from "./pages/dashboard/category/Index";
 import AddCategory from "./pages/dashboard/category/Add";
 import UpdateCategory from "./pages/dashboard/category/Update";
 import PageNotFound from "./pages/PageNotFound";
+import Detail from "./pages/dashboard/article/Detail";
 
 function App() {
 	return (
@@ -21,6 +22,7 @@ function App() {
 					<Route path="/register" element={<Register />} />
 					<Route path="/dashboard" element={<Dashboard />} />
 					<Route path="/dashboard/articles" element={<Article />} />
+					<Route path="/dashboard/articles/:slug" element={<Detail />} />
 					<Route
 						path="/dashboard/articles/update/:slug"
 						element={<UpdateArticle />}

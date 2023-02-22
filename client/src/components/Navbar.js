@@ -31,7 +31,7 @@ const NavbarComponent = () => {
 			className={`Poppins ${styles.boxShadowNavbar}`}
 			bg="white"
 			expand="lg"
-			style={{ height: "70px" }}
+			style={{ minHeight: "70px" }}
 		>
 			<Container>
 				<img src={news} className="me-2" alt="logo" style={{ width: "35px" }} />
@@ -42,7 +42,8 @@ const NavbarComponent = () => {
 					</Navbar.Brand>
 				</Link>
 				<Navbar.Toggle aria-controls="basic-navbar-nav" />
-				<Navbar.Collapse id="basic-navbar-nav">
+				<Navbar.Collapse id="basic-navbar-nav" className="mt-3 mt-lg-0">
+					<hr className="m-0 d-lg-none" />
 					<Nav className="ms-auto me-2">
 						{/* <Nav.Link href={"/dashboard/articles"}>
 							<Link to={"/dashboard/articles"}>Article</Link>

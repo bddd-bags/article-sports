@@ -7,7 +7,7 @@ const LoginRegisterComponent = ({ el, name }) => {
 	return (
 		<>
 			<div>
-				<div className="row" style={{ minHeight: "100vh", maxWidth: "100%" }}>
+				<div className="row m-0" style={{ minHeight: "100vh", width: "100%" }}>
 					<div
 						className="col-md-5 p-0"
 						style={{ backgroundColor: "#33d6a5" }}
@@ -16,7 +16,7 @@ const LoginRegisterComponent = ({ el, name }) => {
 					<div className={`${styles.login}`}>
 						<div className={`${styles.loginCardBox} container my-5`}>
 							<div className="row">
-								<div className="col-md-5">
+								<div className="col-md-5 d-none d-md-block">
 									<div
 										className="d-flex align-items-center flex-wrap"
 										style={{ minHeight: "75vh" }}
@@ -40,10 +40,10 @@ const LoginRegisterComponent = ({ el, name }) => {
 										</div>
 									</div>
 								</div>
-								<div className="col-md-7">
+								<div className="col-md-7 bg-white">
 									<div className="w-100">
-										<div>
-											<p className="text-end px-4 py-2 mb-0">
+										<div className="">
+											<p className="text-end px-4 pt-2 mb-0">
 												{name !== "Register" ? (
 													<Link to={"/register"}>Register?</Link>
 												) : (

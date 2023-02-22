@@ -38,7 +38,7 @@ const postData = async (data, img, cbPost) => {
 		formData.append("description", data.description);
 		formData.append("category_id", data.category_id);
 		formData.append("img", img);
-
+		console.log(formData);
 		await axios.post(`${URL}/articles`, formData, {
 			headers: {
 				Authorization: `Bearer ${token}`,

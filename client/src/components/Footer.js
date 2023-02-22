@@ -12,7 +12,7 @@ const Footer = () => {
 				}}
 			>
 				<div
-					className="container d-flex justify-content-between align-items-center"
+					className="container d-flex justify-content-md-between align-items-center flex-wrap flex-sm-nowrap justify-content-center"
 					style={{ minHeight: "80px" }}
 				>
 					<p

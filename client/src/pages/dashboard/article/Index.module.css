@@ -1,4 +1,6 @@
-/* .cardArticle {} */
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+
 .sectionAdd {
 	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
@@ -9,8 +11,9 @@
 }
 
 .sectionArticle {
-	width: 780px;
+	max-width: 780px;
 	margin: 0 auto;
+	padding: 0 40px;
 }
 
 .shadowCard {
@@ -24,7 +27,7 @@
 	object-fit: cover !important;
 	object-position: center !important; */
   width: 55%;
-  max-height: 220px;
+  min-height: 220px;
   object-fit: cover;
   object-position: center;
 }
@@ -51,4 +54,16 @@
 	white-space: nowrap;
 	background-color: transparent;
 	border: 0;
+}
+
+.textJustify {
+	text-align: justify;
+}
+
+.textPtSans {
+	font-family: 'PT Sans', sans-serif;
+}
+
+.textPtSerif {
+	font-family: 'PT Serif', sans-serif;
 }

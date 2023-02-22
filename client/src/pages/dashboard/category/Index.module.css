@@ -1,35 +1,36 @@
 /* .cardArticle {} */
 .sectionAdd {
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 .root {
-  background-color: #ebebeb7a;
-  min-height: 100vh;
+	background-color: #ebebeb7a;
+	min-height: 100vh;
 }
 
 .sectionArticle {
-  width: 780px;
-  margin: 0 auto;
+	max-width: 780px;
+	margin: 0 auto;
+  padding: 0 40px;
 }
 
 .shadowCard {
-  box-shadow: rgba(140, 140, 141, 0.185) 0px 7px 29px 0px;
+	box-shadow: rgba(140, 140, 141, 0.185) 0px 7px 29px 0px;
 }
 
 .imageCard {
-  width: 55% !important; 
-  max-height: 220px !important;
-  object-fit: cover !important;
-  object-position: center !important;
+	width: 55% !important;
+	min-height: 220px;
+	object-fit: cover !important;
+	object-position: center !important;
 }
 
 .newColorBtn {
-  background-color: #2dbb90 !important;
-  border: #31c99b !important;
-  letter-spacing: 1px !important;
+	background-color: #2dbb90 !important;
+	border: #31c99b !important;
+	letter-spacing: 1px !important;
 }
 
 .newColorBtn:hover {
-  background-color: #269c79 !important;
+	background-color: #269c79 !important;
 }
